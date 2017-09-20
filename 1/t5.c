@@ -4,6 +4,7 @@
 int main (void)
 {
 	int result;
+	//while loop until EOF indicator detected//
 	while (result != EOF)
 	{
 	float i;
