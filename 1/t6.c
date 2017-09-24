@@ -13,11 +13,12 @@ int main (void)
 	while (result != EOF)
 	{
 		total += i;
+		count ++;
 		result = scanf("%f", &i);
 		//input value is in range and floating point value
 		if(sizeof(i)==4 && i>= -100000 && i<=100000)
 		{	
-			if( count == 0)
+			if( count == 1)
 			{
 			smallest = i;
 			}
@@ -30,13 +31,11 @@ int main (void)
 			largest = i; 
 			}
 
-		count ++; 
+		
 		}
-		else
-		{
-		printf("scanf error: (%0.0lf)", i);
-		}
+		
 	}
 	printf("%.2f %.2f %.2f\n", smallest, largest, (total/(count-1)) );
+	
 	return 0;
 }
