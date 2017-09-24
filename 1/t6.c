@@ -21,6 +21,7 @@ int main (void)
 			if( count == 1)
 			{
 			smallest = i;
+			largest = i;
 			}
 			if(i <= smallest)
 			{
