@@ -7,10 +7,9 @@ int main (void)
 	while (end != EOF)
 	{
 		end = scanf("%f", &n);
-		int i;
-		for( i = 0; i < n; i++)
+		for( int i = 0; i < n; i++)
 		{
-		printf("#");
+			printf("#");
 		}
 		printf("\n");
 	}
