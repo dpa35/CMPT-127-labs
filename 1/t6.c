@@ -12,10 +12,10 @@ int main (void)
 	//while loop until EOF indicator detected//
 	while (result != EOF)
 	{
-		
+		total += i;
 		result = scanf("%f", &i);
 		//input value is in range and floating point value
-		if(sizeof(i)==4 && i>= -100000 && i<100000)
+		if(sizeof(i)==4 && i>= -100000 && i<=100000)
 		{	
 			if( count == 0)
 			{
@@ -29,14 +29,15 @@ int main (void)
 			{
 			largest = i; 
 			}
-			total += i;
-			count ++; 
+
+		count ++; 
 		}
 		else
 		{
 		printf("scanf error: (%0.0lf)", i);
 		}
 	}
-	printf("%.2f %.2f %.2f\n", smallest, largest, (total/count) );
+	printf("%.2f %.2f %.2f\n", smallest, largest, (total/(count-1)) );
+	printf("%f %f", total, count);
 	return 0;
 }
