@@ -15,7 +15,7 @@ int main (void)
 		}
 		else
 		{
-		printf("scan error not a float value\n");
+		printf("scanf error: (%0.0lf)", i);
 		}
 	}
 	printf("Done.\n");
