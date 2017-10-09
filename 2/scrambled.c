@@ -21,7 +21,7 @@ int scrambled(unsigned int a[], unsigned int b[], unsigned int len){
 			}
 		}
 	}
-	if (count1==count2){
+	if (count1==count2 && count1==len){
 		return 1;
 	}
 	return 0;
