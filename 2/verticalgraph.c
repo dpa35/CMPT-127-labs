@@ -17,13 +17,13 @@ int main(void){
 	
 	//find largest value in array to determine # of rows
 	
-	for(x=0; x<i; x++){
+	for(x=0; x<i-1; x++){
 		if(input[x] > largestValue){
 			largestValue = input[x];
 		}
 	}
 	//find number of columns via elements in array
-	int column = i; 
+	int column = i-1; 
 	//print lines. " " when input[]<x(largestvalue) "#" otherwise	
 	int y = 0;
 	for(x=largestValue; x>0;x--){
