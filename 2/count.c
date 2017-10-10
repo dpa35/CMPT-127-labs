@@ -9,7 +9,7 @@ int main (void){
 
 	while (curChar != EOF){
 		charCount++;
-		if(curChar>64 && curChar<91 || curChar> 96 && curChar < 123 || curChar == 39){
+		if(!(curChar>64 && curChar<91 || curChar> 96 && curChar < 123 || curChar == 39)){
 			wordCount++;
 		}
 		if(curChar==10){
