@@ -3,7 +3,7 @@
 
 int main(void){
 	//create array to contain up to 80 values
-	int input[80];
+	int input[80]={};
 	int i = 0;
 	int x = 0;
 	int largestValue = 0; 
