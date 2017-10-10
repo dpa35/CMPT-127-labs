@@ -24,8 +24,9 @@ int main(int argc, char* argv[]){
 		if (count == (phrase2-1)){
 			printf("true\n");
 		}
-		else
+		else if(count != (phrase2-1)){
 		printf("false\n");
+		}
 	}
 	
 
