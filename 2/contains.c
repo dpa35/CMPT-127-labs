@@ -10,23 +10,22 @@ int main(int argc, char* argv[]){
 	int phrase1 = strlen(argv[1]);
 	int phrase2 = strlen(argv[2]);
 
-	while(x<(phrase1-1) && count != (phrase2-1)){
-		if(argv[1][x]==argv[2][y]){
+
+	for(x=0;x<(phrase1-1);x++){
+		if(argv[1][x]==argv[2][y] && count != (phrase2-1)){
 			count++;
-			y++;
-			x++;
+			y++;	
 		}
-		else if (argv[1][x] != argv[2][y]){
+		else if(argv[1][x] != argv[2][y] && count != (phrase2-1)){
 			count = 0;
 			y=0;
-			x++;
 		}
-		if (count == (phrase2-1)){
-			printf("true\n");
-		}
-		else if(count != (phrase2-1)){
+	}
+	if(count == (phrase2-1)){
+		printf("true\n");
+	}
+	else if(count != (phrase2-1)){
 		printf("false\n");
-		}
 	}
 	
 
