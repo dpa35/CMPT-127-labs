@@ -17,6 +17,7 @@ int main (void){
 		}
 		curChar = getchar();
 	}
+	charCount --;
 	printf("%lu %lu %lu\n", charCount, wordCount, lineCount);
 	return 0;
 }
