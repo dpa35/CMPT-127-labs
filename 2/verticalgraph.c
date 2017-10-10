@@ -8,7 +8,9 @@ int main(void){
 	int x = 0;
 	int largestValue = 0; 
 	int currentValue = 0;
-	while((i== 0) || (i<80 && currentValue != EOF)){
+	currentValue = scanf("%d", &input[i]);
+	i++;
+	while((i<80 && currentValue != EOF)){
 		currentValue = scanf("%d", &input[i]);
 		i++;
 	}
