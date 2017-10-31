@@ -205,7 +205,38 @@ int locate_color(  const uint8_t array[],
 {
     // your code here
 	//go through array. find color. return x and y pos
+	//keep track of what coloumn and row were in
+	
+	/*int x = 0;
+	int col_count=0;
+	int row_count=0;
+	for( x=0; x<(rows*cols); x++){
+		if(array[x]==color){
+			*x= col_count;
+			*y=row_count;
+			return 1;
+		}
+		if(col_count==cols){
+			col_count=0;
+			row_count++;
+		}
+		col_count ++;
+	}
+	
+		}
+	}*/
 
+	int i =0;
+	int j=0;
+	for (i=0; i<rows;i++){
+		for(j=0; j<cols; j++){
+			if(array[((i*cols)+j)]==color){
+				*x= j;
+				*y= i;
+				return 1;
+			{
+		{
+	}
 	
     return 0;
 }
@@ -220,6 +251,10 @@ void invert( uint8_t array[],
          unsigned int rows )
 {
     // your code here
+	int x = 0;
+	for (x=0; x<(rows*cols);x++){
+		array[x] = 255-array[x];
+	}
 }
 
 /* TASK 6 */
