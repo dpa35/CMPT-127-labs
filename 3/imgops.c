@@ -49,7 +49,7 @@ void zero( uint8_t array[],
 	   unsigned int cols,
 	   unsigned int rows )
 {
-	uint8_t x = 0;
+	int x = 0;
   for (x=0;x< (cols*rows);x++){
 	array[x]= 0;
 	}
@@ -81,7 +81,7 @@ uint8_t min( const uint8_t array[],
 	     unsigned int cols, 
 	     unsigned int rows )
 {
-  uint8_t x=0;
+  int x=0;
   int smallest = 255;
   for(x=0; x<(cols*rows); x++){
 	if(array[x] < smallest){
@@ -98,9 +98,9 @@ uint8_t max( const uint8_t array[],
 		 unsigned int rows )
 {
   // your code here
-  uint8_t x = 0;
+  int x = 0;
   int largest= 0;
-  for(x=0; x<(cols*rows):x++){
+  for(x=0; x<(cols*rows);x++){
 	if(array[x]>largest){
 		largest = array[x];
 	}
@@ -138,12 +138,12 @@ void flip_horizontal( uint8_t array[],
   // your code here
 	//need to reverse each row individually
 	//maintain two indexes that converge with a loop going throw the entire array
-	uint8_t x = 0;
-	uint8_t y = 0;
-	uint8_t z = 0;
+	int x = 0;
+	int y = 0;
+	int z = 0;
 	uint8_t temp = 0;
 
-	for(x=0 x<rows;x++){
+	for(x=0;x<rows;x++){
 		y= (cols * x);
 		z = (x*cols) + (cols-1);
 		if(y!=z){
@@ -168,11 +168,11 @@ void flip_vertical( uint8_t array[],
     // your code here
 	//need to reverse each coloumn individually
 	//keep 2 index values and go through coloumns with loop
-	uint8_t x = 0;
-	uint8_t y = 0;
-	uint8_t z = 0;
+	int x = 0;
+	int y = 0;
+	int z = 0;
 	uint8_t temp = 0;
-	uint8_t i = 0;
+	int i = 0;
 	while ( i< cols){
 		for (x = 0; x<((rows-1)/2); x++){
 			y= (cols * x);
@@ -204,6 +204,9 @@ int locate_color(  const uint8_t array[],
 		   unsigned int *y )
 {
     // your code here
+	//go through array. find color. return x and y pos
+
+	
     return 0;
 }
 
