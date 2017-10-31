@@ -132,14 +132,25 @@ void flip_horizontal( uint8_t array[],
               unsigned int rows )
 {
   // your code here
-	int y = (cols*rows);
-	int temp = 0;
-	for(x=0; x<((cols*rows)/2);x++){
-		if(x!=y){
-		temp =array[x];
-		array[x]=array[y];
-		array[y]=temp;
-		y--;
+	//need to reverse each row individually
+	//maintain two indexes that converge with a loop going throw the entire array
+	uint8_t x = 0;
+	uint8_t y = 0;
+	uint8_t z = 0;
+	uint8_t temp = 0;
+
+	for(x=0 x<rows;x++){
+		y= (cols * x);
+		z = (x*cols) + (cols-1);
+		if(y!=z){
+			temp = array[y];
+			array[y] = array[z];
+			array[z] = temp; 
+			y++;
+			z--;
+
+		}
+	}
 			
 		}
 	}
@@ -151,6 +162,28 @@ void flip_vertical( uint8_t array[],
             unsigned int rows )
 {
     // your code here
+	//need to reverse each coloumn individually
+	//keep 2 index values and go through coloumns with loop
+	uint8_t x = 0;
+	uint8_t y = 0;
+	uint8_t z = 0;
+	uint8_t temp = 0;
+	uint8_t i = 0;
+	while ( i< cols){
+		for (x = 0; x<((rows-1)/2); x++){
+			y= (cols * x);
+			z = (rows-x -1) * (cols);
+			if (y<z){
+				temp = array[y+i];
+				array[y+i] = array[z+i];
+				array[z+i] = temp;
+				
+			
+
+			}
+		}
+		i++;
+	}
 }
 
 /* TASK 4 */
