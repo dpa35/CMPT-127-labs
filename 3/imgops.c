@@ -49,6 +49,7 @@ void zero( uint8_t array[],
 	   unsigned int cols,
 	   unsigned int rows )
 {
+	uint8_t x = 0;
   for (x=0;x< (cols*rows);x++){
 	array[x]= 0;
 	}
@@ -80,6 +81,7 @@ uint8_t min( const uint8_t array[],
 	     unsigned int cols, 
 	     unsigned int rows )
 {
+  uint8_t x=0;
   int smallest = 255;
   for(x=0; x<(cols*rows); x++){
 	if(array[x] < smallest){
@@ -96,6 +98,7 @@ uint8_t max( const uint8_t array[],
 		 unsigned int rows )
 {
   // your code here
+  uint8_t x = 0;
   int largest= 0;
   for(x=0; x<(cols*rows):x++){
 	if(array[x]>largest){
@@ -115,6 +118,7 @@ void replace_color(  uint8_t array[],
 		     uint8_t post_color )
 {
   // your code here
+	int x = 0;
 	for (x=0;x<(cols*rows);x++){
 		if(array[x]==pre_color){
 			array[x]=post_color;
