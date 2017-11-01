@@ -156,8 +156,8 @@ void flip_horizontal( uint8_t array[],
 		}
 	}
 			
-		}
-	}
+		
+	
 }
 
 // flip the image top-to-bottom.
@@ -318,7 +318,7 @@ uint8_t* half( const uint8_t array[],
 	       unsigned int rows )
 {
   //declare array and allocate memory for it (original size of array unknown)
-	uint8_t *arrayB = malloc((cols/2)*(rows/2) * sizeof(uint8_t));
+	/*uint8_t *arrayB = malloc((cols/2)*(rows/2) * sizeof(uint8_t));
 	
 //insert values at p,q with avges of values indicated
 //p =(x*(cols/2)) & q = y and y<(rows/2)
@@ -341,7 +341,7 @@ uint8_t* half( const uint8_t array[],
 
 
 
-	// your code here
+	// your code here*/
   return NULL;
 }
 
