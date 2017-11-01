@@ -414,8 +414,20 @@ unsigned long int region_integrate( const uint8_t array[],
                     unsigned int right,
                     unsigned int bottom )
 {
-    // your code here
-    return 0;
+	unsigned long int sum =0; 
+	if(right ==left && bottom == top){
+		return sum;
+	}
+    int x=0;
+    int y=0;
+	for(x=0;x<rows;x++){
+		for(y=0;y<cols;y++){
+			if(x>=top && x<bottom && y>=left && y<right){
+				sum += array[(x*cols)+y];
+			}
+		}
+	}
+    return sum;
 }
 
 /* TASK 11 */
