@@ -301,7 +301,7 @@ void normalize( uint8_t array[],
 	//where a and b are desired min and max respectively
 	//off by one may be truncation error prior to rounding 
 		test = ((255)*(array[x]-darkest))/(lightest-darkest);
-		array[x] = test;
+		array[x] = round(test);
 	
 	}
     // your code here
@@ -385,6 +385,19 @@ void region_set( uint8_t array[],
          unsigned int bottom,
          uint8_t color )
 {
+	if(right==left && bottom ==top){
+		return;
+	}
+	int x = 0;
+	int y= 0;
+	for(x=0;x<rows;x++){
+		for(y=0;y<cols;y++){
+			if(x>=top && x<bottom && y>=left && y<right){
+				array[(x*cols)+y]=color;
+			}
+		}
+	}
+	
     // your code here
 }
 
