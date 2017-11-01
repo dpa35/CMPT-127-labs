@@ -295,11 +295,13 @@ void normalize( uint8_t array[],
 	uint8_t darkest = min(array, cols, rows);
 	//go through array to change every element
 	int x=0;
+	float test = 0.0;
 	for(x=0;x<(cols*rows); x++){
 	//translate by min and use scaling factor => (b-a)(x-min)/(max-min) +a
 	//where a and b are desired min and max respectively
-		array[x] = ((255)*(array[x]-darkest))/(lightest-darkest);
-		array[x] = round(array[x])+1;
+	//off by one may be truncation error prior to rounding 
+		test = ((255)*(array[x]-darkest))/(lightest-darkest);
+		array[x] = round(test);
 	
 	}
     // your code here
