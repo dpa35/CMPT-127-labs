@@ -234,8 +234,8 @@ int locate_color(  const uint8_t array[],
 				*x= j;
 				*y= i;
 				return 1;
-			{
-		{
+			}
+		}
 	}
 	
     return 0;
