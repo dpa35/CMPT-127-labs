@@ -449,9 +449,7 @@ uint8_t* region_copy( const uint8_t array[],
 {
 	
     // your code here
-	if(right==left && top ==bottom){
-		return NULL;
-	}
+	
 	uint8_t* arrayB= malloc((right-left)*(bottom-top)*sizeof(uint8_t));
 	int x=0;
 	int y=0;
@@ -465,6 +463,9 @@ uint8_t* region_copy( const uint8_t array[],
 		}
 	}
 	return arrayB;
+	if(right==left && top ==bottom){
+		return NULL;
+	}
 }
 
 
