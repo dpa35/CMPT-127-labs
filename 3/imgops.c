@@ -461,6 +461,7 @@ uint8_t* region_copy( const uint8_t array[],
 		for(y=0;y<cols;y++){
 			if(x>=top && x<bottom && y>=left && y<right){
 				arrayB[z]=array[(x*cols)+y];
+				z++;
 			}
 		}
 	}
