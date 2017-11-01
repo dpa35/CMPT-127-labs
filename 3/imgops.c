@@ -207,7 +207,7 @@ int locate_color(  const uint8_t array[],
 	//go through array. find color. return x and y pos
 	//keep track of what coloumn and row were in
 	
-	/*int x = 0;
+	/*/*int x = 0;
 	int col_count=0;
 	int row_count=0;
 	for( x=0; x<(rows*cols); x++){
@@ -224,7 +224,7 @@ int locate_color(  const uint8_t array[],
 	}
 	
 		}
-	}*/
+	}*//*
 
 	int i =0;
 	int j=0;
@@ -238,7 +238,7 @@ int locate_color(  const uint8_t array[],
 		}
 	}
 	
-    return 0;
+    return 0;*/
 }
 
 
