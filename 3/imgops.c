@@ -447,13 +447,17 @@ uint8_t* region_copy( const uint8_t array[],
               unsigned int right,
               unsigned int bottom )
 {
-	
+	//empty region
+	if(right==left && top ==bottom){
+		return NULL;
+	}
     // your code here
-	
+	//allocate enough memory in heap for region
 	uint8_t* arrayB= malloc((right-left)*(bottom-top)*sizeof(uint8_t));
 	int x=0;
 	int y=0;
 	int z=0;
+	//if in region, copy pixel into new array
 	for(x=0;x<rows;x++){
 		for(y=0;y<cols;y++){
 			if(x>=top && x<bottom && y>=left && y<right){
@@ -463,9 +467,7 @@ uint8_t* region_copy( const uint8_t array[],
 		}
 	}
 	return arrayB;
-	if(right==left && top ==bottom){
-		return NULL;
-	}
+	
 }
 
 
