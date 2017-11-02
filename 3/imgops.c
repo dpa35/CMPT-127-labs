@@ -448,7 +448,7 @@ uint8_t* region_copy( const uint8_t array[],
               unsigned int bottom )
 {
 	//empty region
-	if(right==left && top ==bottom){
+	if(((right-left) * (top-bottom))==0){
 		return NULL;
 	}
     // your code here
