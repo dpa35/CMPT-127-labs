@@ -22,7 +22,7 @@ intarr_t* intarr_create( unsigned int len ){
 	if(intarrA==NULL){
 		return NULL;
 	}
-	intarrA -> data = len;
+	intarrA -> len = len;
 	return intarrA;
 	
 }
