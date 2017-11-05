@@ -287,12 +287,15 @@ void normalize( uint8_t array[],
 	uint8_t darkest = min(array, cols, rows);
 	//go through array to change every element
 	int x=0;
+	//difference in lightest/darkest(causes rounding error??
+	float test2 =0.0;
+	float test2= lightest-darkest;
 	float test = 0.0;
 	for(x=0;x<(cols*rows); x++){
 	//translate by min and use scaling factor => (b-a)(x-min)/(max-min) +a
 	//where a and b are desired min and max respectively
 	//off by one may be truncation error prior to rounding ??? make float
-		test = (255)*(array[x]-darkest)/(lightest-darkest);
+		test = (255)*(array[x]-darkest)/(test2);
 		array[x] = round(test);
 	
 	}
