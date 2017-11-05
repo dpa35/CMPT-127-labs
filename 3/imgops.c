@@ -288,7 +288,7 @@ void normalize( uint8_t array[],
 	//go through array to change every element
 	int x=0;
 	//difference in lightest/darkest(causes rounding error??
-	float test2 =0.0;
+	
 	float test2= lightest-darkest;
 	float test = 0.0;
 	for(x=0;x<(cols*rows); x++){
