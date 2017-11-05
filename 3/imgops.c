@@ -176,7 +176,9 @@ void flip_vertical( uint8_t array[],
 	uint8_t temp = 0;
 	int i = 0;
 	while ( i< cols){
-		for (x = 0; x<((rows-1)/2); x++){
+	// go through cols with while loop i index
+	//go through each colomn swapping values
+		for (x = 0; x<(rows/2); x++){
 			y= (cols * x);
 			z = (rows-x -1) * (cols);
 			while (y<z){
