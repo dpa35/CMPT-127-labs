@@ -146,7 +146,7 @@ void flip_horizontal( uint8_t array[],
 	for(x=0;x<rows;x++){
 		y= (cols * x);
 		z = (x*cols) + (cols-1);
-		if(y<=z){
+		while(y<z){
 			temp = array[y];
 			array[y] = array[z];
 			array[z] = temp; 
