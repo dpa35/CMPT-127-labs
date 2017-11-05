@@ -327,6 +327,7 @@ uint8_t* half( const uint8_t array[],
 	for(x=0; x<(rows/2); x++){
 		for( y=0; y<(cols/2);y++){
 //sum up arrays by subbing in vales into p and q formula
+//failed assert???
 			total = array[ (2*x)*cols + (2*y)] +
 		    		array[(2*x+1)*cols + (2*y)] +
 				array[(2*x+1)*cols + (2*y+1)] +
@@ -337,13 +338,14 @@ uint8_t* half( const uint8_t array[],
 			     
 			
 		}
+	return arrayB;
 	
 	}
 
 
 
 	// your code here*/
-  return NULL;
+ 
 }
 
 
