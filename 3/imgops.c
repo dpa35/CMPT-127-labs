@@ -332,15 +332,16 @@ uint8_t* half( const uint8_t array[],
 		    		array[(2*x+1)*cols + (2*y)] +
 				array[(2*x+1)*cols + (2*y+1)] +
 				array[(2*x)*cols +(2*y +1)] ;
-			average = total/4.0;
+			average = (total/4.0);
 //average total
 			arrayB[x*(cols/2)+y]= round(average);
 			     
 			
 		}
-	return arrayB;
+	
 	
 	}
+	return arrayB;
 
 
 
