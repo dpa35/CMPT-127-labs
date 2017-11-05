@@ -312,21 +312,25 @@ uint8_t* half( const uint8_t array[],
 	       unsigned int rows )
 {
   //declare array and allocate memory for it (original size of array unknown)
-	/*uint8_t *arrayB = malloc((cols/2)*(rows/2) * sizeof(uint8_t));
+	uint8_t *arrayB = malloc((cols/2)*(rows/2) * sizeof(uint8_t));
 	
 //insert values at p,q with avges of values indicated
-//p =(x*(cols/2)) & q = y and y<(rows/2)
+//p =(x*(cols/2)) & q = y and y<(rows/2)(loop)
 
 	int x = 0;
 	int y = 0;
-	float sum = 0;
-	float average = 0;
+	float total = 0.0;
+	float average = 0.0;
 	for(x=0; x<(rows/2); x++){
 		for( y=0; y<(cols/2);y++){
-			sum = array[ 2(x*cols) + 2*(y)] +
-		    		array[2(x*cols)+ 1 + 2*(y)] +
-				array[2(x*cols)+1 + 2*(y)+1] +
-				array[2(x*cols) +2*(y) +1] ;
+//sum up arrays by subbing in vales into p and q formula
+			total = array[ (2*x)*cols + (2*y)] +
+		    		array[(2*x+1)*cols + (2*y)] +
+				array[(2*x+1)*cols + (2*y+1)] +
+				array[(2*x)*cols +(2*y +1)] ;
+			average = total/4.0;
+//average total
+			arrayB[x*(cols/2)+y]= round(average);
 			     
 			
 		}
