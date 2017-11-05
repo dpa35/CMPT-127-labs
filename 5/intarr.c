@@ -15,6 +15,7 @@
 
 intarr_t* intarr_create( unsigned int len ){
 	//code here
+	//intarr_t holds data and an int for length
 	//allocate space for intarr_t
 	intarr_t* intarrA = malloc(sizeof(intarr_t));
 	//allocate space for data in intarr_t
@@ -23,7 +24,7 @@ intarr_t* intarr_create( unsigned int len ){
 	if(intarrA==NULL){
 		return NULL;
 	}
-	//assign len to len data type
+	//assign len to len 
 	intarrA -> len = len;
 	return intarrA;
 	
