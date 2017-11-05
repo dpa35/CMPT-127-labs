@@ -4,10 +4,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "intarr.h"
 
 
-
+//task 1
 
 // Create a new intarr_t with initial size len.  If successful
 // (i.e. memory allocation succeeds), returns a pointer to a
