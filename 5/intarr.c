@@ -22,7 +22,7 @@ intarr_t* intarr_create( unsigned int len ){
 	//allocate space for data in intarr_t
 	intarrA -> data= malloc((len)*sizeof(unsigned int));
 	//unsuccessful memory allocation
-	if(intarrA==NULL){
+	if(intarrA==0){
 		return NULL;
 	}
 	//assign len to len 
