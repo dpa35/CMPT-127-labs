@@ -291,8 +291,8 @@ void normalize( uint8_t array[],
 	for(x=0;x<(cols*rows); x++){
 	//translate by min and use scaling factor => (b-a)(x-min)/(max-min) +a
 	//where a and b are desired min and max respectively
-	//off by one may be truncation error prior to rounding 
-		test = ((255)*(array[x]-darkest))/(lightest-darkest);
+	//off by one may be truncation error prior to rounding ??? make float
+		test = (255)*(array[x]-darkest)/(lightest-darkest);
 		array[x] = round(test);
 	
 	}
