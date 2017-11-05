@@ -213,8 +213,8 @@ int locate_color(  const uint8_t array[],
 	int row_count=0;
 	for( z=0; z<(rows*cols); z++){
 		if(array[z]==color){
-			*x= row_count;
-			*y=col_count;
+			*x= col_count;
+			*y=row_count;
 			return 1;
 		}
 		if(col_count==cols){
