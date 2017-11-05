@@ -142,11 +142,13 @@ void flip_horizontal( uint8_t array[],
 	int y = 0;
 	int z = 0;
 	uint8_t temp = 0;
+	//go through array 1 row at a time
 
 	for(x=0;x<rows;x++){
 		y= (cols * x);
 		z = (x*cols) + (cols-1);
-		while(y<z){
+	//reverse order 
+		while(y<=z){
 			temp = array[y];
 			array[y] = array[z];
 			array[z] = temp; 
