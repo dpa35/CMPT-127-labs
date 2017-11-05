@@ -7,7 +7,20 @@
 #include "intarr.h"
 
 
+/* Structure type that encapsulates our safe int array. */
+typedef struct {
+  int* data;
+  unsigned int len;
+} intarr_t;
 
+/* A type for returning status codes */
+typedef enum {
+  INTARR_OK,
+  INTARR_BADARRAY,
+  INTARR_BADINDEX,
+  INTARR_BADALLOC,
+  INTARR_NOTFOUND
+} intarr_result_t;
 
 // Create a new intarr_t with initial size len.  If successful
 // (i.e. memory allocation succeeds), returns a pointer to a
