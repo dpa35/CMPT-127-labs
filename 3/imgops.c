@@ -179,11 +179,12 @@ void flip_vertical( uint8_t array[],
 		for (x = 0; x<((rows-1)/2); x++){
 			y= (cols * x);
 			z = (rows-x -1) * (cols);
-			if (y<z){
+			while (y<z){
 				temp = array[y+i];
 				array[y+i] = array[z+i];
 				array[z+i] = temp;
-				
+				y +=cols;
+				z -=cols;
 			
 
 			}
