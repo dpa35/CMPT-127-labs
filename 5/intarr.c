@@ -53,7 +53,7 @@ intarr_result_t intarr_set( intarr_t* ia,
 		return INTARR_BADARRAY;
 	}
 	//check if index is out of range, if so return badarray
-	if(index < 0 || index > (ia->len)-1){
+	if(index < 0 || index > ((ia->len)-1)){
 		return INTARR_BADINDEX;
 		
 	}
