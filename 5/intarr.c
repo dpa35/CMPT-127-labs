@@ -47,14 +47,18 @@ void intarr_destroy( intarr_t* ia ){
 // INTARR_BADINDEX. If ia is null, return INTARR_BADARRAY.
 intarr_result_t intarr_set( intarr_t* ia, 
 			    unsigned int index, 
-			    int val );
+			    int val ){
+
+}
 
 // If index is valid and i is non-null, set *i to ia->data[index] and return
 // INTARR_OK. Otherwise no not modify *i and return
 // INTARR_BADINDEX. If ia is null, return INTARR_BADARRAY.
 intarr_result_t intarr_get( const intarr_t* ia, 
 			    unsigned int index, 
-			    int* i );
+			    int* i ){
+
+}
 
 /* LAB 5 TASK 3 */
 
