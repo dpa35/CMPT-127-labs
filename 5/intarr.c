@@ -70,6 +70,17 @@ intarr_result_t intarr_set( intarr_t* ia,
 intarr_result_t intarr_get( const intarr_t* ia, 
 			    unsigned int index, 
 			    int* i ){
+	if(ia ==0){
+		return INTARR_BADARRAY;
+	}
+	if(index<0 || index< ((ia->len)-1) || i==NULL){
+		return INTARR_BADINDEX;
+	}
+	*i = ia->data[index];
+		return INTARR_OK;
+	
+		
+	
 
 	
 }
