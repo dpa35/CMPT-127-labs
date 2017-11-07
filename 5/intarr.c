@@ -127,7 +127,17 @@ intarr_result_t intarr_sort( intarr_t* ia ){
 // the array, leave *i unmodified and return INTARR_NOTFOUND. If ia is
 // null, return INTARR_BADARRAY.
 intarr_result_t intarr_find( intarr_t* ia, int target, int* i ){
-
+	if(ia==0){
+		return INTARR_BADARRAY;
+	}
+	int x=0;
+	for(x=0; x<(ia->len);x++){
+		if(ia->data[x]==target && !(i==NULL)){
+			*i = x;
+			return INTARR_OK;
+		}
+	}
+	return INTARR_NOTFOUND;
 }
 
 /* LAB 5 TASK 6 */
