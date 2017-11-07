@@ -59,7 +59,7 @@ intarr_result_t intarr_set( intarr_t* ia,
 	}
 	//check if index in range
 	if(index >= 0 || index <(ia->len)-1){
-		ia->data + index= val;
+		*(ia->data + (index* sizeof(int)))= val;
 		return INTARR_OK;
 	}
 
