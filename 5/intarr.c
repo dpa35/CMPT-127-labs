@@ -58,10 +58,9 @@ intarr_result_t intarr_set( intarr_t* ia,
 		
 	}
 	//index should be in range now
-	else{
-		ia->data[index]= val;
-		return INTARR_OK;
-	}
+	
+	ia->data[index]= val;
+	return INTARR_OK;
 
 }
 
