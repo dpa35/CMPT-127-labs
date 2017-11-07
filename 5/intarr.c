@@ -58,7 +58,7 @@ intarr_result_t intarr_set( intarr_t* ia,
 		
 	}
 	//check if index in range
-	if(index >= 0 || index <(ia->len)-1){
+	if(index >= 0 && index <(ia->len)-1){
 		*(ia->data + index)= val;
 		return INTARR_OK;
 	}
@@ -71,6 +71,8 @@ intarr_result_t intarr_set( intarr_t* ia,
 intarr_result_t intarr_get( const intarr_t* ia, 
 			    unsigned int index, 
 			    int* i ){
+
+	
 
 }
 
