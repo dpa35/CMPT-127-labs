@@ -134,7 +134,9 @@ intarr_result_t intarr_find( intarr_t* ia, int target, int* i ){
 	for(x=0; x<(ia->len);x++){
 		if(ia->data[x]==target && !(i==NULL)){
 			*i = x;
+			//printf("found");
 			return INTARR_OK;
+			
 		}
 	}
 	return INTARR_NOTFOUND;
