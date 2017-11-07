@@ -49,7 +49,7 @@ intarr_result_t intarr_set( intarr_t* ia,
 			    unsigned int index, 
 			    int val ){
 
-	if (ia==0){
+	if (ia==NULL){
 		return INTARR_BADARRAY;
 	}
 	//check if index is out of range, if so return badarray
