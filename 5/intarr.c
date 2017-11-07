@@ -97,7 +97,7 @@ intarr_t* intarr_copy( const intarr_t* ia ){
 	//create new struct
 	intarr_t* copycat= malloc(sizeof(intarr_t));
 	//shallow copy
-	copycat = ia;
+	*copycat = *ia;
 	//allocate new data array to perform deep copy
 	copycat->data= malloc(ia->len*sizeof(unsigned int));
 	//copy data from original array to copy
