@@ -116,6 +116,24 @@ intarr_t* intarr_copy( const intarr_t* ia ){
 // ia are sorted on return. If ia is null, return
 // INTARR_BADARRAY.
 intarr_result_t intarr_sort( intarr_t* ia ){
+	if(ia==0){
+		return INTARR_BADARRAY;
+	}
+	//based off selection sort, well i guess it is selection sort.
+	int x=0;
+	int y=0;
+	int testvalue=0;
+	for(x=1;x<ia->len;x++){
+		y=x-1;
+		testvalue = ia->data[x];
+		while(y>=0 && testvalue<(ia->data[y])){
+			ia->data[y+1]=ia->data[y];
+			y--;
+		}
+		ia->data[y+1]=testvalue;
+		
+	}
+	return INTARR_OK;
 
 }
 
@@ -134,7 +152,7 @@ intarr_result_t intarr_find( intarr_t* ia, int target, int* i ){
 	for(x=0; x<(ia->len);x++){
 		if(ia->data[x]==target && !(i==NULL)){
 			*i = x;
-			//printf("found");
+			//printf("found\n");
 			return INTARR_OK;
 			
 		}
