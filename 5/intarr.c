@@ -65,15 +65,19 @@ intarr_result_t intarr_get( const intarr_t* ia,
 // Return a duplicate of ia, allocating new storage for the duplicate
 // data (we call this a "deep copy"). If unsuccessful (i.e. memory
 // allocation for the copy fails, or ia is null), return a null pointer. 
-intarr_t* intarr_copy( const intarr_t* ia );
+intarr_t* intarr_copy( const intarr_t* ia ){
 
+
+}
 /* LAB 5 TASK 4 */
 
 // sort ia by value smallest-to-largest, so that data[i] < data[i+1]
 // for all valid i, then return INTARR_OK. Works in-place: contents of
 // ia are sorted on return. If ia is null, return
 // INTARR_BADARRAY.
-intarr_result_t intarr_sort( intarr_t* ia );
+intarr_result_t intarr_sort( intarr_t* ia ){
+
+}
 
 /* LAB 5 TASK 5 */
 
@@ -82,20 +86,26 @@ intarr_result_t intarr_sort( intarr_t* ia );
 // location index and return INTARR_OK. If target does not occur in
 // the array, leave *i unmodified and return INTARR_NOTFOUND. If ia is
 // null, return INTARR_BADARRAY.
-intarr_result_t intarr_find( intarr_t* ia, int target, int* i );
+intarr_result_t intarr_find( intarr_t* ia, int target, int* i ){
+
+}
 
 /* LAB 5 TASK 6 */
 
 // Append val to the end of ia (allocating space for it). If
 // successful, return INTARR_OK, otherwise return
 // INTARR_BADALLOC. If ia is null, return INTARR_BADARRAY.
-intarr_result_t intarr_push( intarr_t* ia, int val );
+intarr_result_t intarr_push( intarr_t* ia, int val ){
+
+}
 
 // If the array is not empty, remove the value with the highest index
 // from the array, and, if i is non-null, set *i to the removed value,
 // then return INTARR_OK. If the array is empty, leave *i unmodified
 // and return INTARR_BADINDEX. If ia is null, return INTARR_BADARRAY.
-intarr_result_t intarr_pop( intarr_t* ia, int* i );
+intarr_result_t intarr_pop( intarr_t* ia, int* i ){
+
+}
 
 /* LAB 5 TASK 7 */
 
@@ -105,7 +115,9 @@ intarr_result_t intarr_pop( intarr_t* ia, int* i );
 // integers to zero. If the allocation is successful, return
 // INTARR_OK, otherwise return INTARR_BADALLOC. If ia is null, return
 // INTARR_BADARRAY.
-intarr_result_t intarr_resize( intarr_t* ia, unsigned int newlen );
+intarr_result_t intarr_resize( intarr_t* ia, unsigned int newlen ){
+
+}
 
 /* LAB 5 TASK 8 */
 
@@ -116,4 +128,6 @@ intarr_result_t intarr_resize( intarr_t* ia, unsigned int newlen );
 // first, or memory allocation fails, return a null pointer.
 intarr_t* intarr_copy_subarray( intarr_t* ia, 
 				unsigned int first, 
-				unsigned int last );
+				unsigned int last ){
+
+}
