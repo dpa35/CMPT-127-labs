@@ -52,14 +52,14 @@ intarr_result_t intarr_set( intarr_t* ia,
 	if (ia==0){
 		return INTARR_BADARRAY;
 	}
-	//check if index is in range, if not return badarray
+	//check if index is out of range, if so return badarray
 	if(index < 0 || index > (ia->len)-1){
 		return INTARR_BADINDEX;
 		
 	}
-	//check if index in range
-	if(index >= 0 && index <(ia->len)-1){
-		*(ia->data + index)= val;
+	//index should be in range now
+	else{
+		ia->data[index]= val;
 		return INTARR_OK;
 	}
 
