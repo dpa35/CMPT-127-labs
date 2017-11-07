@@ -72,7 +72,6 @@ intarr_result_t intarr_get( const intarr_t* ia,
 			    int* i ){
 
 	
-
 }
 
 /* LAB 5 TASK 3 */
