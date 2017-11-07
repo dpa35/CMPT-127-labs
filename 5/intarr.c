@@ -73,7 +73,7 @@ intarr_result_t intarr_get( const intarr_t* ia,
 	if(ia ==0){
 		return INTARR_BADARRAY;
 	}
-	if(index<0 || index< ((ia->len)-1) || i==NULL){
+	if(index<0 || index> ((ia->len)-1) || i==NULL){
 		return INTARR_BADINDEX;
 	}
 	*i = ia->data[index];
