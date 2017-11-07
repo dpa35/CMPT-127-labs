@@ -49,6 +49,20 @@ intarr_result_t intarr_set( intarr_t* ia,
 			    unsigned int index, 
 			    int val ){
 
+	if (ia==0){
+		return INTARR_BADARRAY;
+	}
+	//check if index is in range, if not return badarray
+	if(index < 0 || index > (ia->len)-1){
+		return INTARR_BADINDEX;
+		
+	}
+	//check if index in range
+	if(index >= 0 || index <(ia->len)-1){
+		ia->data[index]= val;
+		return INTARR_OK;
+	}
+
 }
 
 // If index is valid and i is non-null, set *i to ia->data[index] and return
