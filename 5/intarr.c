@@ -170,7 +170,9 @@ intarr_result_t intarr_push( intarr_t* ia, int val ){
 		return INTARR_BADARRAY;
 	}
 	//increase len value in len to 1 to hold new val
-	ia->len+=1;
+	//printf("%d\n", ia->len);
+	//ia->len+=1;
+	//printf("%d\n", ia->len);
 	//create a new array to insert into data (same data + val)
 	int* temp= malloc(((ia->len)+1)* sizeof(int));
 	if(temp==0){
@@ -183,8 +185,15 @@ intarr_result_t intarr_push( intarr_t* ia, int val ){
 	
 	}
 	temp[x]=val;
+	//printf("%d\n", temp[x]);
+	
+	//printf("%d\n", ia->len);
+	ia->len+=1;
+	//printf("%d\n", ia->len);
 	//insert into ia
 	ia->data=temp;
+	
+	//printf("%d\n", ia->data[x]);
 	
 	return INTARR_OK;
 	
