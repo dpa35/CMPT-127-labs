@@ -192,9 +192,9 @@ void flip_vertical( uint8_t array[],
 			}
 		}
 		
-	for (x=0;x<rows*cols;x++){
-		printf(" %i", array[x]);
-	}
+	//for (x=0;x<rows*cols;x++){
+		//printf(" %i", array[x]);
+	//}
 }
 
 /* TASK 4 */
