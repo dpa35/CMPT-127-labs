@@ -290,5 +290,21 @@ intarr_result_t intarr_resize( intarr_t* ia, unsigned int newlen ){
 intarr_t* intarr_copy_subarray( intarr_t* ia, 
 				unsigned int first, 
 				unsigned int last ){
-
+	if(ia==0 || first<0 || last > (ia-> len)-1 || last<first){
+		return NULL;
+	}
+	intarr_t* newMe = malloc(sizeof(intarr_t));
+	newMe->data= malloc((last-first+1)*sizeof(int));
+	int x = 0;
+	int y=0;
+	for(x=0;x<ia->len;x++){
+		if(x>=first && x<=last){
+			//printf("im walking over here\n");
+			newMe->data[y]=ia->data[x];
+			y++;
+		}
+	}
+	newMe->len=(last-first+1);
+	
+	return newMe;
 }
