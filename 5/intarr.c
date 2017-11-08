@@ -206,6 +206,33 @@ intarr_result_t intarr_push( intarr_t* ia, int val ){
 // and return INTARR_BADINDEX. If ia is null, return INTARR_BADARRAY.
 intarr_result_t intarr_pop( intarr_t* ia, int* i ){
 
+	if(ia==0){
+		return INTARR_BADARRAY;
+	}
+	if((ia->len ) ==0){
+		return INTARR_BADINDEX;
+	}
+	//create a new array without the highest index- same as appending but in reverse
+	int* temp= malloc(((ia->len)-1)*sizeof(int));
+	//if(temp==0){
+	//	return INTARR_BADARRAY;
+	//}
+	int x=0;
+	for(x=0;x<((ia->len)-1);x++){
+		temp[x]=ia->data[x];
+	}
+	
+	if(!(i==NULL)){
+		*i=ia->data[x];
+		//printf("%i\n", *i);
+	}
+	//printf("%d\n", ia->len);
+	ia->len-=1;
+	//printf("%d\n", ia->len);
+	ia->data=temp;
+	return INTARR_OK;
+	
+
 }
 
 /* LAB 5 TASK 7 */
