@@ -247,32 +247,34 @@ intarr_result_t intarr_resize( intarr_t* ia, unsigned int newlen ){
 	if(ia==0){
 		return INTARR_BADARRAY;
 	}
-	//use pop and push functions w/ difference between newlen and len
-
-	int x=0;
-	int * i= malloc(sizeof(int));
-	//printf("%i\n", (newlen-(ia->len)));
-	//if newlen is less than original array
-	if(newlen < (ia->len)){
-		for(x=0; x<((ia->len)-newlen)+1;x++){
-			printf("I did a thing\n");
-			if((intarr_pop(ia,i))== INTARR_BADALLOC){
-				return INTARR_BADALLOC;
-			}
-			
-			
+	if(newlen<(ia->len)){
+		int diff = (ia->len)-newlen;
+		int * temp= malloc(((ia->len)-diff)*sizeof(int));
+		
+		int x=0;
+		for(x=0; x<(ia->len)-diff;x++){
+			temp[x]=ia->data[x];
 		}
+		ia->len -=diff;
+		ia->data=temp;
+		return INTARR_OK;
+	}
+	if(newlen>(ia->len)){
+	int diff = newlen-(ia->len);
+	int*temp = malloc(((ia->len)+diff)*sizeof(int));
+	int x = 0; 
+		for(x=0; x<(ia->len)+diff;x++){
+			if(x<ia->len){
+				temp[x]=ia->data[x];
+			}
+			else{
+				temp[x]=0;
+			}
+		}
+		ia->len +=diff;
+		ia->data=temp;
 	}
 	
-	if(newlen>(ia->len)){
-		for(x=0;x<(newlen-(ia->len))+1;x++){
-			printf("I did a thing\n");
-			if((intarr_push(ia,0))== INTARR_BADALLOC){
-				return INTARR_BADALLOC;
-			}
-		}
-
-	}
 	return INTARR_OK;
 
 
