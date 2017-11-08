@@ -173,12 +173,12 @@ void flip_vertical( uint8_t array[],
 	int x = 0;
 	int y = 0;
 	int z = 0;
-	uint8_t temp = 0;
+	int temp = 0;
 	int i = 0;
-	while ( i< cols){
+	
 	// go through cols with while loop i index
 	//go through each colomn swapping values
-		for (x = 0; x<(rows/2); x++){
+		for (i=0;i<cols;i++){
 			y= (cols * x);
 			z = (rows-x -1) * (cols);
 			while (y<z){
@@ -191,7 +191,9 @@ void flip_vertical( uint8_t array[],
 
 			}
 		}
-		i++;
+		
+	for (x=0;x<rows*cols;x++){
+		printf(" %i", array[x]);
 	}
 }
 
