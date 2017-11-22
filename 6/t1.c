@@ -48,9 +48,13 @@ int intarr_save_binary( intarr_t* ia, const char* filename ){
 		return 2;
 	}
 	//return 3 if it fails. 
-	if( fwrite(ia->data, sizeof(int), ia->len, f) !=(ia->len)){
+	int test = fwrite(ia->data, sizeof(int), ia->len, f);
+	if( test !=(ia->len)){
 		printf("failed to copy array into filename");
 		return 3;
+	}
+	if (test ==0){
+		return 1;
 	}
 	fclose(f);
 	return 0;
