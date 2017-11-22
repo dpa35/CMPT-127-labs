@@ -43,14 +43,20 @@ int intarr_save_json( intarr_t* ia, const char* filename ){
 		printf("failed file opening");
 		return 1;
 	}
-	//desired output [ a, b... z]
+	//desired output [ a, b,... z]
 	
 	fprintf(f, "[");
 	int x=0;
 	//if len = 0, prints empty array
+	//missing comma?
 	if((ia->len)>0){
 		for(x=0;x<ia->len;x++){
-			fprintf(f, "%i", ia->data[x]);
+			if(x==(ia->len-1)){
+				fprintf(f, "%i", ia->data[x]);
+			}
+			else{
+				fprintf(f, "%i, ", ia->data[x]);
+			}
 		}
 	}
 	fprintf(f, "]");
@@ -66,5 +72,12 @@ int intarr_save_json( intarr_t* ia, const char* filename ){
   success (even if that array has length 0), or NULL on failure.
 */
 intarr_t* intarr_load_json( const char* filename ){
+	//must convert from char to int
+	//create an index	
+	if(filename==NULL){
+		printf("file error\n");
+		return NULL;
+	}
+
 
 }
