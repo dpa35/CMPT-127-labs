@@ -52,14 +52,14 @@ int intarr_save_json( intarr_t* ia, const char* filename ){
 	if((ia->len)>0){
 		for(x=0;x<ia->len;x++){
 			if(x==(ia->len-1)){
-				fprintf(f, "%i", ia->data[x]);
+				fprintf(f, " %i", ia->data[x]);
 			}
 			else{
-				fprintf(f, "%i, ", ia->data[x]);
+				fprintf(f, " %i, ", ia->data[x]);
 			}
 		}
 	}
-	fprintf(f, "]");
+	fprintf(f, " ]");
 	fclose(f);
 	return 0;
 	
