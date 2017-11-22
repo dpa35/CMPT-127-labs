@@ -28,10 +28,11 @@ int intarr_save_binary( intarr_t* ia, const char* filename ){
 
 	FILE * f = fopen( filename, "w");
 	//check to see if file opened for writing
-	//if (f ==NULL){
-		//printf("Failed to open image");
-		//return 0;
-	//}
+	//corner case?
+	if (f ==NULL){
+		printf("Failed to open image");
+		return 1;
+	}
 
 	//array of length 0 -> output file of an empty array
 	if(ia->len==0){
