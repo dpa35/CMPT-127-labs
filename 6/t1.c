@@ -39,13 +39,15 @@ int intarr_save_binary( intarr_t* ia, const char* filename ){
 		return 0;
 	}
 	
+	
 	//write into filename using pointers to len and data of ia
 	//return 2 if it fails
+	//len first because its size 1
 	if( fwrite(&(ia->len), sizeof(int), 1, f) !=1){
 		printf("failed to write len into filename");
 		return 2;
 	}
-	//return 3 if it fails
+	//return 3 if it fails. 
 	if( fwrite(ia->data, sizeof(int), ia->len, f) !=(ia->len)){
 		printf("failed to copy array into filename");
 		return 3;
@@ -62,4 +64,14 @@ int intarr_save_binary( intarr_t* ia, const char* filename ){
 */
 intarr_t* intarr_load_binary( const char* filename ){
 
+	//open filename for reading
+	FILE * f= fopen(filename, "r");
+	if(f==NULL){
+		printf("failed to open file");
+		return NULL;
+	}
+	//create new allocated intarr_t
+
+	intarr_t * catBus = malloc(sizeof(intarr_t));
+	//find length of array
 }
