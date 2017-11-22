@@ -60,4 +60,6 @@ int intarr_save_binary( intarr_t* ia, const char* filename ){
   previously saved using intarr_save_binary(). Returns a pointer to a
   newly-allocated intarr_t on success, or NULL on failure.
 */
-intarr_t* intarr_load_binary( const char* filename );
+intarr_t* intarr_load_binary( const char* filename ){
+
+}
