@@ -28,10 +28,10 @@ int intarr_save_binary( intarr_t* ia, const char* filename ){
 
 	FILE * f = fopen( filename, "w");
 	//check to see if file opened for writing
-	if (f ==NULL){
-		printf("Failed to open image");
-		return 1;
-	}
+	//if (f ==NULL){
+		//printf("Failed to open image");
+		//return 0;
+	//}
 
 	//array of length 0 -> output file of an empty array
 	if(ia->len==0){
@@ -74,4 +74,12 @@ intarr_t* intarr_load_binary( const char* filename ){
 
 	intarr_t * catBus = malloc(sizeof(intarr_t));
 	//find length of array
+	//fread() copies length bytes onto destination
+	fread(&(catBus->len), sizeof(int), 1, f);
+	
+	//allocate space for array
+	catBus->data= malloc((catBus->len)*sizeof(int));
+
+	//copy data from f onto array
+	int x=0;
 }
