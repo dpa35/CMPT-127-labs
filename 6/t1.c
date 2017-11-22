@@ -82,4 +82,10 @@ intarr_t* intarr_load_binary( const char* filename ){
 
 	//copy data from f onto array
 	int x=0;
+	for(x=0; x<(catBus->len); x++){	
+		fread(&(catBus->data[x]), sizeof(int), 1, f);
+		
+	}
+	fclose(f);
+	return catBus;
 }
