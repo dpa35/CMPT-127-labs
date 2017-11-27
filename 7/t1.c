@@ -88,6 +88,8 @@ int list_prepend( list_t* list, int i )
 
 element_t* list_index( list_t* list, unsigned int i )
 {
+	//returns element under index=i
+	//doesnt check if list head is NULL/list empty
   element_t* el = list->head;
   unsigned int now = 0;
   
