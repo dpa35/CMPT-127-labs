@@ -36,10 +36,31 @@ int main( int argc, char* argv[] )
 
 
   	//t1.c => list index doesnt check if list is empty
-
+	list_t * list1 =list_create();
+	
+	
+	list_destroy(list1);
+	printf("blah\n");
+	//element_t * el = list_index(list1, 10);
+	//if( el==NULL){
+		//printf("blah\n");
+	//}
+	
+	
 	
 	//t2.c => element_create doesn't set el->next to NULL
+	
+	list_t * listBoots = list_create();
+	int x = 0;
+	for(x=0; x<1000; x++){
+		list_append(listBoots, 8008135);
+	}
+	list_destroy(listBoots);
 	list_t * list2 = list_create();
+	element_t * test = element_create(10);
+	element_t * test2 = element_create(20);
+	test2->next = test;
+	free(test2);
 	list_append(list2, 10);
 	if(list2->tail->next != NULL){
 		printf("t2 failed. Did not set new element tail to NULL\n");
@@ -48,7 +69,7 @@ int main( int argc, char* argv[] )
 	//t3.c => element_index doesnt check if list is empty
 	//now index starts at 1. skips first element
 	list_t * list3 = list_create();
-	int x = 0;
+	
 	for(x=0; x<5;x++){
 		list_append(list3, x);
 	}
@@ -57,6 +78,7 @@ int main( int argc, char* argv[] )
 		printf("t3 failed. Wrong index value returned.\n");
 		return 1;
 	}
+
 
 	//t4.c =>list prepend doesnt check if list is empty to set tail to new element
 	list_t * list4 = list_create();
