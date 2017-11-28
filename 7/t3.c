@@ -73,6 +73,7 @@ int list_prepend( list_t* list, int i )
 
 element_t* list_index( list_t* list, unsigned int i )
 {
+	//doesn't check if the list is empty
   element_t* el = list->head->next;
   unsigned int now = 1;
   
