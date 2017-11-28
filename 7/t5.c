@@ -73,6 +73,7 @@ int list_prepend( list_t* list, int i )
 
 element_t* list_index( list_t* list, unsigned int i )
 {
+
   if( list->head == NULL )
     return NULL;
   
@@ -80,6 +81,7 @@ element_t* list_index( list_t* list, unsigned int i )
   unsigned int now = 0;
   
   while( now < i )
+	//doesnt stop when i> length of list. out of scope
     {
       now++;
       el = el->next;
