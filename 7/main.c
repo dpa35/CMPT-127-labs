@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
 #include "list.h"
 
@@ -28,14 +29,34 @@ int main( int argc, char* argv[] )
       return 1;
     }
 
-//t2.c => element_create doesn't set el->next to NULL
+
 //t3.c => element_index doesnt check if list is empty
-//t4.c => list_prepend doesnt check if the list is empty, if list is empty doesn't assign list tail to an element
+
 //t5.c
 
 
   	//t1.c => list index doesnt check if list is empty
 
+	
+	//t2.c => element_create doesn't set el->next to NULL
+	list_t * list2 = list_create();
+	list_append(list2, 10);
+	if(list2->tail->next != NULL){
+		printf("t2 failed. Did not set new element tail to NULL\n");
+		assert(list->tail->next==NULL);
+	}
+	//t3.c => element_index doesnt check if list is empty
+	//now index starts at 1. skips first element
+	list_t * list3 = list_create();
+	int x = 0;
+	for(x=0; x<5;x++){
+		list_append(list3, x);
+	}
+	element_t * el3 = list_index(list3, 0);
+	if(el3->val !=0){
+		printf("t3 failed. Wrong index value returned.\n");
+		return 1;
+	}
 
 	//t4.c =>list prepend doesnt check if list is empty to set tail to new element
 	list_t * list4 = list_create();
