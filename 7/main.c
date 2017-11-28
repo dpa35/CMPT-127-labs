@@ -64,6 +64,7 @@ int main( int argc, char* argv[] )
 	list_append(list2, 10);
 	if(list2->tail->next != NULL){
 		printf("t2 failed. Did not set new element tail to NULL\n");
+		return 1;
 		assert(list->tail->next==NULL);
 	}
 	//t3.c => element_index doesnt check if list is empty
