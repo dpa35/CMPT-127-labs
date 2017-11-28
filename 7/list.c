@@ -30,8 +30,11 @@ void list_destroy( list_t* list )
 element_t* element_create( int i )
 {
   element_t* el = malloc( sizeof(element_t) );
+	if(el){
+
   el->val = i;
   el->next = NULL;
+	}
 //doesn't set el->next to NULL
   return el;
 }
