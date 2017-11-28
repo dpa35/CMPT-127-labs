@@ -32,7 +32,7 @@ int main( int argc, char* argv[] )
 
 //t3.c => element_index doesnt check if list is empty
 
-//t5.c
+
 
 
   	//t1.c => list index doesnt check if list is empty
@@ -92,8 +92,16 @@ int main( int argc, char* argv[] )
 		printf("list is empty, t1 fail\n");
 		return 1;
 	}*/
-	
-		
+	//t5.c => el can go out of scope. No if statement from stopping at last node
+	list_t * list5 = list_create();
+	for(x=0; x<5; x++){
+		list_append(list5, x);
+	}
+	element_t * el5 = list_index( list5, 4);
+	if(el5->next==NULL){
+		printf("t5 failed. index is out of scope\n");
+		return 1;
+	}
 	
 	
 
