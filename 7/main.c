@@ -40,7 +40,13 @@ int main( int argc, char* argv[] )
 		printf("index is out of scope\n");
 		return 1;
 	}
-	
+	//doesnt detect empty list
+	list_t * list1 = list_create();
+	element_t * el1 = list_index(list1, 20);
+	if( el1 !=NULL){
+		printf("T1 failed. did not detect empty list\n");
+		return 1;
+	}
 
 
 //t3.c => element_index doesnt check if list is empty
