@@ -74,6 +74,8 @@ int list_prepend( list_t* list, int i )
 element_t* list_index( list_t* list, unsigned int i )
 {
 	//doesn't check if the list is empty
+	//starts count at 1 instead of 0. index is off by -1
+	//skips first element
   element_t* el = list->head->next;
   unsigned int now = 1;
   

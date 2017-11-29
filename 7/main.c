@@ -29,6 +29,19 @@ int main( int argc, char* argv[] )
       return 1;
     }
 
+	//t1 and t5 (list_index)
+	list_append(list, 0);
+	list_append(list, 10);
+	list_append(list, 20);
+	list_append(list, 30);
+	list_append(list, 40);
+	element_t * el15 = list_index(list, 20);
+	if (el15 !=NULL){
+		printf("index is out of scope\n");
+		return 1;
+	}
+	
+
 
 //t3.c => element_index doesnt check if list is empty
 
@@ -36,11 +49,19 @@ int main( int argc, char* argv[] )
 
 
   	//t1.c => list index doesnt check if list is empty
-	list_t * list1 =list_create();
+	/*list_t * list1 =list_create();
+	element_t * test3 = element_create(45);
+	list1->head = test3;
+	element_t * el1 = list_index(list1, 0); 
+	
+	if(el1 !=NULL){
+		printf("Task 1 failed. did not detect empty list\n");
+		return 1;
+	}
 	
 	
 	list_destroy(list1);
-	printf("blah\n");
+	printf("blah\n");*/
 	//element_t * el = list_index(list1, 10);
 	//if( el==NULL){
 		//printf("blah\n");
@@ -93,15 +114,16 @@ int main( int argc, char* argv[] )
 		return 1;
 	}*/
 	//t5.c => el can go out of scope. No if statement from stopping at last node
-	list_t * list5 = list_create();
+	/*list_t * list5 = list_create();
 	for(x=0; x<5; x++){
 		list_append(list5, x);
 	}
-	element_t * el5 = list_index( list5, 4);
-	if(el5->next==NULL){
+	
+	element_t * el5 = list_index( list5, 9);
+	if(el5 != NULL){
 		printf("t5 failed. index is out of scope\n");
 		return 1;
-	}
+	}*/
 	
 	
 

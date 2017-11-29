@@ -74,6 +74,8 @@ int list_prepend( list_t* list, int i )
   if( el == NULL )
     return 1;
 
+	//doesnt check if the list is NULL for tail. Tail remains unset in empty list
+
   if( list->head )
     el->next = list->head;
 
