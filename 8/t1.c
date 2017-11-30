@@ -65,7 +65,7 @@ int point_array_remove( point_array_t* pa, unsigned int i ){
 	if(pa->len <= i){
 		return 1;
 	}
-	//check if pa is an empty array, bad to subtract 1
+	//check if pa is an empty array, bad to subtract 1 dont do
 	if(pa->len==0){
 		return 1;
 	}
