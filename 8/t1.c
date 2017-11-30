@@ -57,5 +57,27 @@ int point_array_append( point_array_t* pa, point_t* p ){
 // Remove the point at index i from the array, reducing the size of
 // the array by one. The order of points in the array may change.
 int point_array_remove( point_array_t* pa, unsigned int i ){
+	//sounds like a job for unstable remove
+	if(pa==NULL){
+		return 1;
+	}
+	//check if i is in scope
+	if(pa->len <= i){
+		return 1;
+	}
+	//check if pa is an empty array, bad to subtract 1
+	if(pa->len==0){
+		return 1;
+	}
+	//replace index i element with last element
+	pa->points[i]=pa->points[(pa->len)-1];
+	//reallocate size
+	pa->points=realloc(pa->points, (((pa->len)-1) * sizeof(point_t)));
+	if(pa->points == NULL){
+		return 1;
+	}
+	pa->len --;
+	return 0;
+	
 
 }
