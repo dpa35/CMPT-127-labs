@@ -22,8 +22,8 @@ void point_array_reset( point_array_t* pa ){
 	//check if pa is valid
 	//for every malloc you need a free. 
 	if(pa != NULL){
-	pa->len = 0
-	pa->reserved = 0
+	pa->len = 0;
+	pa->reserved = 0;
 	free(pa->points);
 	free(pa);
 	
@@ -43,9 +43,11 @@ int point_array_append( point_array_t* pa, point_t* p ){
 		return 1;
 	}
 	//realloc space for new array len +1 increase len by 1
+	//return 1 if realloc fails
 	if(!(pa->points = realloc((pa->points), sizeof(point_t)*(pa->len+1)))){
 		return 1;
 	}
+	//assign new val and increase length by 1
 	pa->points[(pa->len)+1]= *p;
 	pa->len ++;
 	return 0;
