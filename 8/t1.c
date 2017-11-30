@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "point_array.h"
+
+// Safely initalize an empty array structure.
+void point_array_init( point_array_t* pa ){
+	//check if pa is valid
+	if(pa){
+	//intialize all points to 0
+	//allocate enough space for pointer 
+	pa-> len = 0;
+	pa-> points = malloc(sizeof (point_t *));
+	pa->reserved = 0;
+	
+
+}
+
+// Resets the array to be empty, freeing any memory allocated if
+// necessary.
+void point_array_reset( point_array_t* pa ){
+
+}
+
+// Append a point to the end of an array. If successful, return 0,
+// else return 1;
+int point_array_append( point_array_t* pa, point_t* p ){
+
+}
+
+// Remove the point at index i from the array, reducing the size of
+// the array by one. The order of points in the array may change.
+int point_array_remove( point_array_t* pa, unsigned int i ){
+
+}
