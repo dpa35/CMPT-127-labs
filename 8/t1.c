@@ -88,6 +88,7 @@ int point_array_remove( point_array_t* pa, unsigned int i ){
 	//reallocate size
 	//valid index returned 1? empty array?
 	pa->points=realloc(pa->points, (((pa->len)-1) * sizeof(point_t)));
+		printf("this is working\n");
 	if(pa->points == NULL || pa->len ==0){
 		return 1;
 	}
