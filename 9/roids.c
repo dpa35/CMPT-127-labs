@@ -443,6 +443,16 @@ void key_up( unsigned char key, int x, int y )
      if key is 'z' or 'x', set ship rotation speed ship.da to zero.
      if key is 'm', set ship.thrust to zero.
   */
+  switch(key){
+    case 'z':
+    case 'x':
+      ship.da = 0;
+      break;
+    case 'm':
+      ship.thrust = 0;
+      break;
+
+  }
 }
 
 // -- main: program start and main loop logic --------------------------------
