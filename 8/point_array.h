@@ -10,6 +10,8 @@ typedef struct
 {
   size_t len;      // number of points in the array
   point_t* points; // an array of len point_t structs
+size_t reserved; 
+
 } point_array_t;
 
 // Safely initalize an empty array structure.

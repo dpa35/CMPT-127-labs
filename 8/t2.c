@@ -74,6 +74,10 @@ int point_array_remove( point_array_t* pa, unsigned int i ){
 	}
 	//unstable remove space is already allocated
 	pa->points[i]=pa->points[((pa->len)-1)];
+	//empty array 
+	if(pa->points==NULL && pa->len ==0){
+		return 1;
+	}
 	pa->len--;
 	pa->reserved++;
 
