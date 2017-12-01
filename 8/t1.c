@@ -44,7 +44,8 @@ int point_array_append( point_array_t* pa, point_t* p ){
 	}
 	//realloc space for new array len +1 increase len by 1
 	//return 1 if realloc fails
-	if(!(pa->points = realloc((pa->points), sizeof(point_t)*(pa->len+1)))){
+	(pa->points = realloc((pa->points), sizeof(point_t)*(pa->len+1)))
+		if(pa->points==NULL){
 		return 1;
 	}
 	//assign new val and increase length by 1
