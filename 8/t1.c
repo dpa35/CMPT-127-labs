@@ -12,6 +12,7 @@ void point_array_init( point_array_t* pa ){
 		pa-> points = malloc(sizeof (point_t *));
 		pa->reserved = 0;
 	}
+	return;
 	
 
 }
@@ -28,6 +29,7 @@ void point_array_reset( point_array_t* pa ){
 	free(pa);
 	
 	}
+	return;
 
 }
 
