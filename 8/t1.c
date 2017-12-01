@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "point_array.h"
+#include <assert.h>
 
 // Safely initalize an empty array structure.
 void point_array_init( point_array_t* pa ){
 	//check if pa is valid
-	if(pa != NULL){
+	if(pa!=NULL){
+		assert(pa);
 	//intialize all points to 0
 	//allocate enough space for pointer 
 		pa-> len = 0;
@@ -22,7 +24,9 @@ void point_array_init( point_array_t* pa ){
 void point_array_reset( point_array_t* pa ){
 	//check if pa is valid
 	//for every malloc you need a free. 
-	if(pa != NULL){
+	if(pa!=NULL){
+		assert(pa);
+
 	pa->len = 0;
 	//pa->reserved = 0;
 	free(pa->points);
@@ -38,20 +42,23 @@ void point_array_reset( point_array_t* pa ){
 int point_array_append( point_array_t* pa, point_t* p ){
 	//valid array
 	if(pa ==NULL){
+		assert(pa);
 		return 1;
 	}
 	//valid new element
 	if(p == NULL){
+		assert(p);
 		return 1;
 	}
 	//realloc space for new array len +1 increase len by 1
 	//return 1 if realloc fails
-	(pa->points = realloc((pa->points), sizeof(point_t)*(pa->len+1)));
+	pa->points = realloc((pa->points), (pa->len+1)*sizeof(point_t));
 		if(pa->points==NULL){
 		return 1;
 	}
 	//assign new val and increase length by 1
-	pa->points[(pa->len)+1]= *p;
+	//array [0-len-1] 
+	pa->points[(pa->len)]= *p;
 	pa->len ++;
 	return 0;
 
@@ -62,6 +69,7 @@ int point_array_append( point_array_t* pa, point_t* p ){
 int point_array_remove( point_array_t* pa, unsigned int i ){
 	//sounds like a job for unstable remove
 	if(pa==NULL){
+		assert(pa);
 		return 1;
 	}
 	//check if i is in scope
