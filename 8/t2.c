@@ -56,13 +56,15 @@ int point_array_append( point_array_t* pa, point_t* p ){
 			return 1;
 			printf("im working\n");
 		}
-		//reserved space doubles from previous value by making it length
-		pa->reserved= pa->len;
+		pa->reserved = pa->len;
+		
+		
 		
 
 	}
 	pa->points[pa->len]= *p;
 	pa->len++;
+	return 0;
 
 }
 
