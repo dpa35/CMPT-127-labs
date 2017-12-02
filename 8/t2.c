@@ -35,8 +35,15 @@ int point_array_append( point_array_t* pa, point_t* p ){
 	if(p==NULL){
 		return 1;
 	}
+	
+	//initial append (empty array)
+	//malloc 2 slots (1 for intial point_t and 1 for reserved point_t increase reserve)
+	if(pa->reserved ==0 && pa->len ==0){
+		pa->points = malloc(2 * sizeof(point_t));
+		pa->reserved= 1;
+	}
+	pa->reserved --;
 	//decrease reserved space by 1
-	pa->reserved--;
 	//check to see if more allocation is required, reallocate if necessary
 	//array should double in length with each allocation
 	if(pa->reserved == 0 && pa->len != 0){
@@ -44,7 +51,7 @@ int point_array_append( point_array_t* pa, point_t* p ){
 		if(pa->points ==NULL){
 			return 1;
 		}
-		//reserved space doubles from previous value
+		//reserved space doubles from previous value by making it length
 		pa->reserved= pa->len;
 		
 
