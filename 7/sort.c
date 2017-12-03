@@ -5,16 +5,15 @@
 
 void LLcatenate(list_t * list1, list_t * list2){
     //check if list2 is empty
-if(list2->head == NULL){
-    assert(list2->tail == NULL);
-    free(list2);
-}
+    if(list2->head == NULL){
+        assert(list2->tail == NULL);
+        free(list2);
+    }
 //check if list1 is empty, if it is copy L2
-if(list1->head==NULL){
+    if(list1->head==NULL){
     //assert(list1->tail==NULL);{
         *list1= *list2;
-    }
-}
+        }
 //both list1 and list2 are not empty
 if(list2!=NULL){
     list1->tail->next= list2->head;
