@@ -1,8 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
+#include <assert.h>
 
-
+void LLcatenate(list_t * list1, list_t * list2){
+    //check if list2 is empty
+if(list2->head == NULL){
+    assert(list2->tail == NULL);
+    free(list2);
+}
+//check if list1 is empty, if it is copy L2
+if(list1->head==NULL){
+    assert(list1->tail==NULL);{
+        *list1= *list2;
+    }
+}
+//both list1 and list2 are not empty
+if(list2!=NULL){
+    list1->tail->next= list2->head;
+    list1->tail=list2->tail;
+    free(list2);
+}
+}
 //based off of bobby's LL quicksort lectures
 void list_sort(list_t * intlist){
     //base case
@@ -50,7 +69,7 @@ void list_sort(list_t * intlist){
 
 }
 
-void LLcatenate(list_t * list1, list_t * list2){
+/*void LLcatenate(list_t * list1, list_t * list2){
     //check if list2 is empty
 if(list2->head == NULL){
     assert(list2->tail == NULL);
@@ -67,6 +86,5 @@ if(list2!=NULL){
     list1->tail->next= list2->head;
     list1->tail=list2->tail;
     free(list2);
-}
+}*/
 
-}
