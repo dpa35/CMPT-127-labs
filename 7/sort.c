@@ -12,7 +12,7 @@ void list_sort(list_t * intlist){
     //split list into roughtly 2 equal pieces with a pivot 
     //remove head from list (pivot)
     int pivot = intlist->head->val;
-    element_t pivotEl = intlist->head;
+    element_t * pivotEl = intlist->head;
     intlist->head = intlist->head->next;
 
 //partition with pivot
@@ -50,7 +50,7 @@ void list_sort(list_t * intlist){
 
 }
 
-void LLcatenate(list_t list1, list_t list2){
+void LLcatenate(list_t * list1, list_t * list2){
     //check if list2 is empty
 if(list2->head == NULL){
     assert(list2->tail == NULL);
