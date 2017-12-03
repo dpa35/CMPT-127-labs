@@ -58,7 +58,7 @@ if(list2->head == NULL){
 }
 //check if list1 is empty, if it is copy L2
 if(list1->head==NULL){
-    assert(list1->tail==NULL){
+    assert(list1->tail==NULL);{
         *list1= *list2;
     }
 }
