@@ -120,7 +120,11 @@ int Image :: save( const char* filename ){
         return 1;
     }
 
-
+    FILE * f = fopen(filename, "r");
+    if(f==NULL){
+        return 1;
+    }
+    //?
 
   }
 
