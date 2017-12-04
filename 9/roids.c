@@ -352,11 +352,55 @@ int shot_roid_hit( const shot_t* shot, const roid_t* roid )
   /* TODO: modify this code so it takes into account the toroidal
      shape of the world.
    */
-  
+  //this returns an intact asteroid
+  // return all possible combinations of x +- 1 and y+- 1
+  //
   return( shot->x >= roid->x - roid->width/2 &&
 	  shot->x <= roid->x + roid->width/2 &&
 	  shot->y >= roid->y - roid->height/2 &&
-	  shot->y <= roid->y + roid->height/2 );
+	  shot->y <= roid->y + roid->height/2 )||
+
+    ( shot->x >= roid->x+1 - roid->width/2 &&
+	  shot->x <= roid->x+1  + roid->width/2 &&
+	  shot->y >= roid->y+1 - roid->height/2 &&
+	  shot->y <= roid->y+1 + roid->height/2 )||
+    
+    ( shot->x >= roid->x+1 - roid->width/2 &&
+	  shot->x <= roid->x+1 + roid->width/2 &&
+	  shot->y >= roid->y-1 - roid->height/2 &&
+	  shot->y <= roid->y-1 + roid->height/2 )||
+
+    ( shot->x >= roid->x+1 - roid->width/2 &&
+	  shot->x <= roid->x+1 + roid->width/2 &&
+	  shot->y >= roid->y - roid->height/2 &&
+	  shot->y <= roid->y + roid->height/2 )||
+    
+    ( shot->x >= roid->x - roid->width/2 &&
+	  shot->x <= roid->x + roid->width/2 &&
+	  shot->y >= roid->y+1 - roid->height/2 &&
+	  shot->y <= roid->y+1 + roid->height/2 ) ||
+
+    ( shot->x >= roid->x-1 - roid->width/2 &&
+	  shot->x <= roid->x-1 + roid->width/2 &&
+	  shot->y >= roid->y+1 - roid->height/2 &&
+	  shot->y <= roid->y+1 + roid->height/2 )||
+    
+    ( shot->x >= roid->x-1 - roid->width/2 &&
+	  shot->x <= roid->x-1 + roid->width/2 &&
+	  shot->y >= roid->y - roid->height/2 &&
+	  shot->y <= roid->y + roid->height/2 ) ||
+    
+    ( shot->x >= roid->x-1 - roid->width/2 &&
+	  shot->x <= roid->x-1 + roid->width/2 &&
+	  shot->y >= roid->y-1 - roid->height/2 &&
+	  shot->y <= roid->y-1 + roid->height/2 )||
+    
+    ( shot->x >= roid->x+1 - roid->width/2 &&
+	  shot->x <= roid->x+1 + roid->width/2 &&
+	  shot->y >= roid->y-1 - roid->height/2 &&
+	  shot->y <= roid->y-1 + roid->height/2 );
+
+
 
 }
 
