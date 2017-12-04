@@ -77,7 +77,50 @@ Image :: ~Image(){
      loaded by load().  Returns 0 on success, else a non-zero error
      code. */
 int Image :: save( const char* filename ){
+    //write the contents of filename into a format that can be saved and loaded
+    //LAB 6 has most of algorithm
     if(filename == NULL){
         return 1;
     }
+
+
+    FILE * f = (filename, "w");
+    if(f==NULL){
+        printf("failed to open\n");
+        return 1;
+    }
+    //if image is blank write a blank file
+    if(this->pixels ==NULL){
+        fclose(fs);
+        return 0;
+
+    }
+    //write onto f from contents of filename
+    //write len, cols, rows, pixel info
+    int len = (this->cols * this-> rows);
+    fwrite(&len, sizeof(int), 1, f);
+    printf("wrote len\n");
+    fwrite(&(this->cols), sizeof(int), 1 , f);
+    printf("wrote cols\n");
+    fwrite(&(this->rows), sizeof(int), 1, f);
+    printf("wrote rows\n");
+    fwrite(this->pixels, sizeof(int), len, f);
+    printf("wrote pixels\n")
+
+    fclose(f);
+    return 0;
+
 }
+
+/* Load the an image from the file filename, replacing the current
+     image size and data. The file is in a format that was saved by
+     save().  Returns 0 success, else a non-zero error code . */
+  int load( const char* filename ){
+    if(filename == NULL){
+        return 1;
+    }
+
+
+
+  }
+
