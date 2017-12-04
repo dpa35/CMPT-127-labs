@@ -360,6 +360,11 @@ int shot_roid_hit( const shot_t* shot, const roid_t* roid )
 	  shot->y >= roid->y - roid->height/2 &&
 	  shot->y <= roid->y + roid->height/2 )||
 
+    (shot->x >= roid->x - roid->width/2 &&
+	  shot->x <= roid->x + roid->width/2 &&
+	  shot->y >= roid->y-1 - roid->height/2 &&
+	  shot->y <= roid->y-1 + roid->height/2 )||
+
     ( shot->x >= roid->x+1 - roid->width/2 &&
 	  shot->x <= roid->x+1  + roid->width/2 &&
 	  shot->y >= roid->y+1 - roid->height/2 &&
@@ -395,10 +400,7 @@ int shot_roid_hit( const shot_t* shot, const roid_t* roid )
 	  shot->y >= roid->y-1 - roid->height/2 &&
 	  shot->y <= roid->y-1 + roid->height/2 )||
     
-    ( shot->x >= roid->x+1 - roid->width/2 &&
-	  shot->x <= roid->x+1 + roid->width/2 &&
-	  shot->y >= roid->y-1 - roid->height/2 &&
-	  shot->y <= roid->y-1 + roid->height/2 );
+    );
 
 
 
