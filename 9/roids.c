@@ -133,6 +133,13 @@ void ship_draw( const ship_t* ship )
   float rx = ship->size/2.0 * cos( fmod( ship->a - 2.2, 2.0*M_PI) );
   float ry = ship->size/2.0 * sin( fmod( ship->a - 2.2, 2.0*M_PI) );
   
+
+  draw_triangle( ship->x + dx, ship->y + dy,
+		 ship->x + lx, ship->y + ly,
+		 ship->x + rx, ship->y + ry,
+		 shipcolor );
+
+
   //x,y
   draw_triangle( ship->x + dx, ship->y + dy,
 		 ship->x + lx, ship->y + ly,
@@ -254,11 +261,6 @@ void ship_draw( const ship_t* ship )
 		 ship->x-1 + rx, ship->y-1 + ry,
 		 shipcolor );
     }
-
-draw_triangle( ship->x + dx, ship->y + dy,
-		 ship->x + lx, ship->y + ly,
-		 ship->x + rx, ship->y + ry,
-		 shipcolor );
 
 
 
