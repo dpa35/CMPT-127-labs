@@ -92,7 +92,7 @@ int Image :: save( const char* filename ){
     }
     //if image is blank write a blank file
     if(this->pixels ==NULL){
-        fclose(fs);
+        fclose(f);
         return 0;
         printf("empty file\n");
 
