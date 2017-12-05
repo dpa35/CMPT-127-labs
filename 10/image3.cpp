@@ -29,6 +29,7 @@ int Image :: resize( unsigned int width,  unsigned int height, uint8_t fillcolor
         delete[] this->pixels[x];
     }
     delete [] this->pixels;
+    printf("resetting pixels!\n")
     //replace pixels with new pixelsw ith fill color of new dimension
     //use this pointer when looking at class' data structure
 
@@ -42,7 +43,6 @@ int Image :: resize( unsigned int width,  unsigned int height, uint8_t fillcolor
     for(int x =0; x<width; x++){
         newArr[x] = new uint8_t[width];
     }
-    this->pixels = newArr;
     //successfull memory allocation?
     if(newArr == NULL){
         printf("unsucessfull memory allocation\n");
@@ -53,9 +53,11 @@ int Image :: resize( unsigned int width,  unsigned int height, uint8_t fillcolor
     int y = 0;
     for(x=0; x< this->rows; x++){
         for(y=0; y< this->cols; y++){
-            this->pixels[x][y] = fillcolor;
+            newArr[x][y] = fillcolor;
         }
     }
+
+    this->pixels = newArr;
     printf("new array is set\n");
     //set pixel pointer to newArr
    
