@@ -49,11 +49,10 @@ int Image :: resize( unsigned int width,  unsigned int height, uint8_t fillcolor
         for(y=0; y< this->cols; y++){
             newArr[x][y] = fillcolor;
         }
-    this-> pixels = newArr;
 
 
     }
-    
+    this->pixels = newArr;
     
     //initialize every pixel to fillcolor
     return 0;
