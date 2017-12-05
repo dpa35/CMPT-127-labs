@@ -32,6 +32,8 @@ int Image :: resize( unsigned int width,  unsigned int height, uint8_t fillcolor
     //replace pixels with new pixelsw ith fill color of new dimension
     //use this pointer when looking at class' data structure
 
+    //img rows = height cols = weight
+
     this->rows = height;
     this->cols = width;
     //use new to declare new array instead of malloc
@@ -40,18 +42,21 @@ int Image :: resize( unsigned int width,  unsigned int height, uint8_t fillcolor
     for(int x =0; x<width; x++){
         newArr[x] = new uint8_t[width];
     }
+    //successfull memory allocation?
     if(newArr == NULL){
+        printf("unsucessfull memory allocation\n")
         return 1;
     }
-    
+    printf("sucessfully allocated memory!\n")
+    //set all pixels to fill color
     int y = 0;
     for(x=0; x< this->rows; x++){
         for(y=0; y< this->cols; y++){
             newArr[x][y] = fillcolor;
         }
-
-
     }
+    printf("new array is set\n")
+    //set pixel pointer to newArr
     this->pixels = newArr;
     
     //initialize every pixel to fillcolor
@@ -181,10 +186,10 @@ int Image :: save( const char* filename ){
             fread(&(this->pixels[x][y]), sizeof(uint8_t), 1, f);
         }
     }
+    
     if(this->pixels == NULL){
         return 1;
     }
-
     fclose(f);
     return 0;
     //
