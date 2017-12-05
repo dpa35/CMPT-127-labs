@@ -37,24 +37,22 @@ int Image :: resize( unsigned int width,  unsigned int height, uint8_t fillcolor
     //use new to declare new array instead of malloc
     //using 2d array this time 
     uint8_t ** newArr = new uint8_t*[height];
-    if(newArr==NULL){
-        return 1;
-    }
     for(int x =0; x<width; x++){
         newArr[x] = new uint8_t[width];
     }
     if(newArr == NULL){
         return 1;
     }
+    this-> pixels = newArr;
     int y = 0;
     for(x=0; x< this->rows; x++){
         for(y=0; y< this->cols; y++){
-            newArr[x][y] = fillcolor;
+            this->pixels[x][y] = fillcolor;
         }
     
 
     }
-    this-> pixels = newArr;
+    
     
     //initialize every pixel to fillcolor
     return 0;
