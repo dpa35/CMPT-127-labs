@@ -36,19 +36,19 @@ int Image :: resize( unsigned int width,  unsigned int height, uint8_t fillcolor
     this->cols = width;
     //use new to declare new array instead of malloc
     //using 2d array this time 
-    uint8_t ** newArr = new uint8_t[height];
-    int x=0;
+    uint8_t ** newArr = new uint8_t*[height];
+    
     for(int x =0; x<width; x++){
         newArr[x] = new uint8_t[width];
     }
     if(newArr == NULL){
         return 1;
     }
-    int x = 0;
+    
     int y = 0;
     for(x=0; x< this->rows; x++){
         for(y=0; y< this->cols; y++){
-            this-> newArr[x][y] = fillcolor;
+            newArr[x][y] = fillcolor;
         }
     }
     
@@ -177,7 +177,7 @@ int Image :: save( const char* filename ){
     int y=0;
     for(x=0; x< this->rows;x++){
         for(y=0; y<this->cols; y++){
-            fread(&(this->pixels[x][y], sizeof(uint8_t), 1, f);
+            fread(&(this->pixels[x][y]), sizeof(uint8_t), 1, f);
         }
     }
     if(this->pixels == NULL){
@@ -186,6 +186,6 @@ int Image :: save( const char* filename ){
 
     fclose(f);
     return 0;
-    
+    //
   }
 
