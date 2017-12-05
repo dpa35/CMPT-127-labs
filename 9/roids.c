@@ -138,101 +138,127 @@ void ship_draw( const ship_t* ship )
 		 ship->x + lx, ship->y + ly,
 		 ship->x + rx, ship->y + ry,
 		 shipcolor );
-  // x, y+1
+  if( ship->thrust )
+    {
+      
+  draw_triangle( ship->x + dx, ship->y + dy,
+		 ship->x + lx, ship->y + ly,
+		 ship->x + rx, ship->y + ry,
+		 shipcolor );
+    }
+     
+     //x,y+1
   draw_triangle( ship->x + dx, ship->y+1 + dy,
 		 ship->x + lx, ship->y+1 + ly,
 		 ship->x + rx, ship->y+1 + ry,
 		 shipcolor );
-  // x, y-1
+  if( ship->thrust )
+    {
+    draw_triangle( ship->x + dx, ship->y+1 + dy,
+		 ship->x + lx, ship->y+1 + ly,
+		 ship->x + rx, ship->y+1 + ry,
+		 shipcolor );
+    }
+	
+   //x,y-1
   draw_triangle( ship->x + dx, ship->y-1 + dy,
 		 ship->x + lx, ship->y-1 + ly,
 		 ship->x + rx, ship->y-1 + ry,
 		 shipcolor );
-  //x+1, y 
+  if( ship->thrust )
+    {
+  draw_triangle( ship->x + dx, ship->y-1 + dy,
+		 ship->x + lx, ship->y-1 + ly,
+		 ship->x + rx, ship->y-1 + ry,
+		 shipcolor );
+    }
+
+     //x+1,y
   draw_triangle( ship->x+1 + dx, ship->y + dy,
 		 ship->x+1 + lx, ship->y + ly,
 		 ship->x+1 + rx, ship->y + ry,
 		 shipcolor );
-  //x+1, y+1
+  if( ship->thrust )
+    {
+    
+  draw_triangle( ship->x+1 + dx, ship->y + dy,
+		 ship->x+1 + lx, ship->y + ly,
+		 ship->x+1 + rx, ship->y + ry,
+		 shipcolor );
+    }
+
+    //x+1,y+1
   draw_triangle( ship->x+1 + dx, ship->y+1 + dy,
 		 ship->x+1 + lx, ship->y+1 + ly,
 		 ship->x+1 + rx, ship->y+1 + ry,
 		 shipcolor );
-  //x+1, y-1
+  if( ship->thrust )
+    {
+    
+  draw_triangle( ship->x+1 + dx, ship->y+1 + dy,
+		 ship->x+1 + lx, ship->y+1 + ly,
+		 ship->x+1 + rx, ship->y+1 + ry,
+		 shipcolor );
+    }
+
+    //x+1,y-1
   draw_triangle( ship->x+1 + dx, ship->y-1 + dy,
 		 ship->x+1 + lx, ship->y-1 + ly,
 		 ship->x+1 + rx, ship->y-1 + ry,
 		 shipcolor );
-  //x-1, y
+  if( ship->thrust )
+    {
+    
+  draw_triangle( ship->x+1 + dx, ship->y-1 + dy,
+		 ship->x+1 + lx, ship->y-1 + ly,
+		 ship->x+1 + rx, ship->y-1 + ry,
+		 shipcolor );
+    
+    //x-1,y
   draw_triangle( ship->x-1 + dx, ship->y + dy,
 		 ship->x-1 + lx, ship->y + ly,
 		 ship->x-1 + rx, ship->y + ry,
-		 shipcolor );
-  //x-1, y+1
-  draw_triangle( ship->x-1 + dx, ship->y+1 + dy,
-		 ship->x-1 + lx, ship->y+1 + ly,
-		 ship->x-1 + rx, ship->y+1 + ry,
-		 shipcolor );
-  //x-1, y-1
-  draw_triangle( ship->x-1 + dx, ship->y-1 + dy,
-		 ship->x-1 + lx, ship->y-1 + ly,
-		 ship->x-1 + rx, ship->y-1 + ry,
-		 shipcolor );
-//x,y
-  draw_triangle( ship->x + dx, ship->y + dy,
-		 ship->x + lx, ship->y + ly,
-		 ship->x + rx, ship->y + ry,
 		 shipcolor );
   if( ship->thrust )
     {
       
-     //x,y
-  draw_triangle( ship->x + dx, ship->y + dy,
-		 ship->x + lx, ship->y + ly,
-		 ship->x + rx, ship->y + ry,
-		 shipcolor );
-  // x, y+1
-  draw_triangle( ship->x + dx, ship->y+1 + dy,
-		 ship->x + lx, ship->y+1 + ly,
-		 ship->x + rx, ship->y+1 + ry,
-		 shipcolor );
-  // x, y-1
-  draw_triangle( ship->x + dx, ship->y-1 + dy,
-		 ship->x + lx, ship->y-1 + ly,
-		 ship->x + rx, ship->y-1 + ry,
-		 shipcolor );
-  //x+1, y 
-  draw_triangle( ship->x+1 + dx, ship->y + dy,
-		 ship->x+1 + lx, ship->y + ly,
-		 ship->x+1 + rx, ship->y + ry,
-		 shipcolor );
-  //x+1, y+1
-  draw_triangle( ship->x+1 + dx, ship->y+1 + dy,
-		 ship->x+1 + lx, ship->y+1 + ly,
-		 ship->x+1 + rx, ship->y+1 + ry,
-		 shipcolor );
-  //x+1, y-1
-  draw_triangle( ship->x+1 + dx, ship->y-1 + dy,
-		 ship->x+1 + lx, ship->y-1 + ly,
-		 ship->x+1 + rx, ship->y-1 + ry,
-		 shipcolor );
-  //x-1, y
   draw_triangle( ship->x-1 + dx, ship->y + dy,
 		 ship->x-1 + lx, ship->y + ly,
 		 ship->x-1 + rx, ship->y + ry,
 		 shipcolor );
-  //x-1, y+1
+    }
+  //x-1,y+1
   draw_triangle( ship->x-1 + dx, ship->y+1 + dy,
 		 ship->x-1 + lx, ship->y+1 + ly,
 		 ship->x-1 + rx, ship->y+1 + ry,
 		 shipcolor );
-  //x-1, y-1
+  if( ship->thrust )
+    {
+      
+  draw_triangle( ship->x-1 + dx, ship->y+1 + dy,
+		 ship->x-1 + lx, ship->y+1 + ly,
+		 ship->x-1 + rx, ship->y+1 + ry,
+		 shipcolor );
+    }
+
+//x-1,y-1
   draw_triangle( ship->x-1 + dx, ship->y-1 + dy,
 		 ship->x-1 + lx, ship->y-1 + ly,
 		 ship->x-1 + rx, ship->y-1 + ry,
 		 shipcolor );
-               
+  if( ship->thrust )
+    {
+      
+  draw_triangle( ship->x-1 + dx, ship->y-1 + dy,
+		 ship->x-1 + lx, ship->y-1 + ly,
+		 ship->x-1 + rx, ship->y-1 + ry,
+		 shipcolor );
     }
+
+
+
+
+
     //
 
   /* TASK 3 */
