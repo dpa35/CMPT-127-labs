@@ -79,6 +79,7 @@ Image :: ~Image(){
 int Image :: save( const char* filename ){
     //write the contents of filename into a format that can be saved and loaded
     //LAB 6 has most of algorithm
+    printf("i got here\n");
     if(filename == NULL){
         return 1;
     }
