@@ -397,8 +397,41 @@ void roid_split( unsigned int index )
 void roid_draw( const roid_t* roid )
 {
   // draw a rectangle around centre of the roid.
+  //x, y
   draw_rectangle( roid->x-roid->width/2.0, roid->y-roid->height/2.0, 
 		  roid->x+roid->width/2.0, roid->y+roid->height/2,
+		  roid->color );
+  //x, y+1
+  draw_rectangle( roid->x-roid->width/2.0, roid->y+1-roid->height/2.0, 
+		  roid->x+roid->width/2.0, roid->y+1+roid->height/2,
+		  roid->color );
+  //x, y-1
+  draw_rectangle( roid->x-roid->width/2.0, roid->y-1-roid->height/2.0, 
+		  roid->x+roid->width/2.0, roid->y-1+roid->height/2,
+		  roid->color );
+  //x+1, y 
+  draw_rectangle( roid->x+1-roid->width/2.0, roid->y-roid->height/2.0, 
+		  roid->x+1+roid->width/2.0, roid->y+roid->height/2,
+		  roid->color );
+  //x+1, y+1
+  draw_rectangle( roid->x+1-roid->width/2.0, roid->y+1-roid->height/2.0, 
+		  roid->x+1+roid->width/2.0, roid->y+1+roid->height/2,
+		  roid->color );
+  //x+1, y-1
+  draw_rectangle( roid->x+1-roid->width/2.0, roid->y-1-roid->height/2.0, 
+		  roid->x+1+roid->width/2.0, roid->y-1+roid->height/2,
+		  roid->color );
+  //x-1, y
+  draw_rectangle( roid->x-1-roid->width/2.0, roid->y-roid->height/2.0, 
+		  roid->x-1+roid->width/2.0, roid->y+roid->height/2,
+		  roid->color );
+  //x-1, y+1
+  draw_rectangle( roid->x-1-roid->width/2.0, roid->y+1-roid->height/2.0, 
+		  roid->x-1+roid->width/2.0, roid->y+1+roid->height/2,
+		  roid->color );
+  //x-1, y-1
+  draw_rectangle( roid->x-1-roid->width/2.0, roid->y-1-roid->height/2.0, 
+		  roid->x-1+roid->width/2.0, roid->y-1+roid->height/2,
 		  roid->color );
 
   /* TASK 4 */
