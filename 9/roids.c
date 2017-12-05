@@ -181,7 +181,7 @@ void ship_draw( const ship_t* ship )
   if( ship->thrust )
     {
       //x, y
-      draw_triangle( ship->x + dx, ship->y + dy,
+    draw_triangle( ship->x + dx, ship->y + dy,
 		 ship->x + lx, ship->y + ly,
 		 ship->x + rx, ship->y + ry,
 		 shipcolor );
