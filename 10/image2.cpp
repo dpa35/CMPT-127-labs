@@ -110,7 +110,7 @@ int Image :: save( const char* filename ){
     printf("wrote cols\n");
 
     
-    fwrite(this->pixels, sizeof(int), len, f);
+    fwrite(this->pixels, sizeof(uint8_t), len, f);
     printf("wrote pixels\n")
 
     fclose(f);
@@ -151,7 +151,7 @@ int Image :: save( const char* filename ){
 
     //resize pixel size based off filename pixel size
     this->resize(col2, row2, 0);
-    fread(this->pixels, sizeof(int), len2, f);
+    fread(this->pixels, sizeof(uint8_t), len2, f);
     if(this->pixels == NULL){
         return 1;
     }
