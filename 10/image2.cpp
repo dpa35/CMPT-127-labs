@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include "image.hpp"
+#include "image2.hpp"
 
 //look at intarr for insights
 
@@ -109,7 +109,6 @@ int Image :: save( const char* filename ){
     fwrite(&(this->cols), sizeof(int), 1 , f);
     printf("wrote cols\n");
 
-    
     fwrite(this->pixels, sizeof(uint8_t), len, f);
     printf("wrote pixels\n")
 
