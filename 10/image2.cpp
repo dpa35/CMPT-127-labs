@@ -110,7 +110,7 @@ int Image :: save( const char* filename ){
     printf("wrote cols\n");
 
     fwrite(this->pixels, sizeof(uint8_t), len, f);
-    printf("wrote pixels\n")
+    printf("wrote pixels\n");
 
     fclose(f);
     return 0;
@@ -120,7 +120,7 @@ int Image :: save( const char* filename ){
 /* Load the an image from the file filename, replacing the current
      image size and data. The file is in a format that was saved by
      save().  Returns 0 success, else a non-zero error code . */
-  int load( const char* filename ){
+  int Image::load( const char* filename ){
     if(filename == NULL){
         return 1;
     }
