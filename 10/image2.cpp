@@ -83,7 +83,7 @@ int Image :: save( const char* filename ){
     if(filename == NULL){
         return 1;
     }
-
+    printf("I got to this part\n");
 
     FILE * f = fopen(filename, "w");
     if(f==NULL){
@@ -94,6 +94,7 @@ int Image :: save( const char* filename ){
     if(this->pixels ==NULL){
         fclose(fs);
         return 0;
+        printf("empty file\n");
 
     }
     //write onto f from contents of filename
