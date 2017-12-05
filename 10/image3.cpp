@@ -43,13 +43,14 @@ int Image :: resize( unsigned int width,  unsigned int height, uint8_t fillcolor
     if(newArr == NULL){
         return 1;
     }
-    this-> pixels = newArr;
+    
     int y = 0;
     for(x=0; x< this->rows; x++){
         for(y=0; y< this->cols; y++){
-            this->pixels[x][y] = fillcolor;
+            newArr[x][y] = fillcolor;
         }
-    
+    this-> pixels = newArr;
+
 
     }
     
