@@ -42,6 +42,7 @@ int Image :: resize( unsigned int width,  unsigned int height, uint8_t fillcolor
     for(int x =0; x<width; x++){
         newArr[x] = new uint8_t[width];
     }
+    this->pixels = newArr;
     //successfull memory allocation?
     if(newArr == NULL){
         printf("unsucessfull memory allocation\n");
@@ -52,12 +53,12 @@ int Image :: resize( unsigned int width,  unsigned int height, uint8_t fillcolor
     int y = 0;
     for(x=0; x< this->rows; x++){
         for(y=0; y< this->cols; y++){
-            newArr[x][y] = fillcolor;
+            this->pixels[x][y] = fillcolor;
         }
     }
     printf("new array is set\n");
     //set pixel pointer to newArr
-    this->pixels = newArr;
+   
     
     //initialize every pixel to fillcolor
     return 0;
