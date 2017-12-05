@@ -233,6 +233,7 @@ void ship_draw( const ship_t* ship )
 		 shipcolor );
                
     }
+    //
 
   /* TASK 3 */
   /* TODO: 
