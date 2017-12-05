@@ -84,7 +84,7 @@ int Image :: save( const char* filename ){
     }
 
 
-    FILE * f = (filename, "w");
+    FILE * f = fopen(filename, "w");
     if(f==NULL){
         printf("failed to open\n");
         return 1;
@@ -100,10 +100,14 @@ int Image :: save( const char* filename ){
     int len = (this->cols * this-> rows);
     fwrite(&len, sizeof(int), 1, f);
     printf("wrote len\n");
-    fwrite(&(this->cols), sizeof(int), 1 , f);
-    printf("wrote cols\n");
+
     fwrite(&(this->rows), sizeof(int), 1, f);
     printf("wrote rows\n");
+
+    fwrite(&(this->cols), sizeof(int), 1 , f);
+    printf("wrote cols\n");
+
+    
     fwrite(this->pixels, sizeof(int), len, f);
     printf("wrote pixels\n")
 
@@ -124,7 +128,34 @@ int Image :: save( const char* filename ){
     if(f==NULL){
         return 1;
     }
-    //?
+    //read from filename replacing data/pixels
+    int len2 = 0;
+    //check length if 0, reset and return
+    fread(&len2, sizeof(int), 1, f);
+    if(len2==0){//empty filename
+        this->cols = 0;
+        this->rows = 0;
+        this->pixels =NULL;
+        fclose(f);
+        return 0;
 
+    }
+    //read and store row/col vals
+    //should not be 0, empty already dealt with
+    int row2 = 0;
+    int col2 = 0;
+    fread(&row2, sizeof(int), 1, f);
+    fread(&col2, sizeof(int), 1, f);
+
+    //resize pixel size based off filename pixel size
+    this->resize(col2, row2, 0);
+    fread(this->pixels, sizeof(int), len2, f);
+    if(this->pixels == NULL){
+        return 1;
+    }
+
+    fclose(f);
+    return 0;
+    
   }
 
