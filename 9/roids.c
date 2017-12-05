@@ -213,7 +213,7 @@ void ship_draw( const ship_t* ship )
 		 ship->x+1 + lx, ship->y-1 + ly,
 		 ship->x+1 + rx, ship->y-1 + ry,
 		 shipcolor );
-    
+    }
     //x-1,y
   draw_triangle( ship->x-1 + dx, ship->y + dy,
 		 ship->x-1 + lx, ship->y + ly,
