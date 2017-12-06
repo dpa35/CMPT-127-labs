@@ -28,8 +28,9 @@ int Image :: resize( unsigned int width,  unsigned int height, uint8_t fillcolor
     for(x=0; x< this->rows; x++){
         delete[] this->pixels[x];
     }
+    //when resizing from a larger pixel size to smaller gets error
     delete [] this->pixels;
-    printf("resetting pixels!\n")
+    printf("resetting pixels!\n");
     //replace pixels with new pixelsw ith fill color of new dimension
     //use this pointer when looking at class' data structure
 
